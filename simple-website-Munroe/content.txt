@@ -1,0 +1,219 @@
+-----------------------------------------
+- Author: (you)
+- Description: This activity walks you though an approach you can take to coding a website from scratch using semantic HTML and accessible CSS.
+- Favicon: favicon.ico 
+- Fonts (from Google Fonts): 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;900&family=Vidaloka&display=swap" rel="stylesheet">
+-----------------------------------------
+
+
+-----------------------------------------
+- Title/H1: Sand Sellers
+- include skip link
+- Navigation: Home, Products, Testimonials
+-----------------------------------------
+
+
+-----------------------------------------
+- Get a Free Quote Today!
+- Whether you're ready to fill your house, yard, and cars with sand or you just want some expert advice on choosing the right sand for your home, Sand Sellers can help you get the sand you need! We offer free quotes and advice, seven days a week. Contact us today!
+- video embed:
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VkrQ9QuKprE?si=BjyeStODG9aGarNG" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-----------------------------------------
+
+
+-----------------------------------------
+- Products
+---------------------
+- Light Sand
+- image: sand-2 (waves of white sand)
+- Our light sand is difficult to look upon in direct sunlight, but it sure is pretty!
+---------------------
+- Standard Sand
+- image: sand-3 (uneven brown beach sand)
+- Basic? This sand is for you! It does not come in pumpkin spice flavor, though.
+---------------------
+- Dark Sand
+- image: sand-1 (waves of black sand)
+- Our black sand comes from a secret volcanic island that is only used for evil sometimes.
+-----------------------------------------
+
+
+-----------------------------------------
+- Testimonials
+---------------------
+- Jane Sandcastle, Death Valley, California
+- image: person-1 (Jane Sandcastle has red shoulder-length hair and is resting a hand on her chin)
+- "I LOVE Sand Sellers! Their sand is the sandiest! They came to our house for a free quote and we didn't want them to leave!"
+---------------------
+- George Sanderson, Miami, Florida
+- image: person-2 (George Sanderson has short dark hair and is standing in front of a brick wall)
+- "My house was fine, but it needed more sand. I was tired of the hardwood floors. Sand Sellers coated everything in the sand I chose and I couldn't be happier."
+-----------------------------------------
+
+
+-----------------------------------------
+---------------------
+- Follow Us
+- Facebook Link on Facebook Logo SVG (from Tabler Icons: https://tablericons.com/)
+    - aria-label: Follow us on Facebook
+- Instagram Link on Instagram Logo SVG (from Tabler Icons)
+    - aria-label: Follow us on Instagram
+- Pinterest Link on Pinterest Logo SVG (from Tabler Icons)
+    - aria-label: Follow us on Pinterest
+---------------------
+- Copyright Statement, Year, & Symbol
+-----------------------------------------
+
+
+-----------------------------------------
+CSS FILE ITEMS:
+- colors:
+    - dk-blue: #1A1C29
+    - med-blue:
+    - lt-blue: 
+    - beige: 
+    - cream: 
+
+- neutrals:
+    - lt-gray: #eaeaea
+    - med-gray: #555
+    - dk-gray: #222
+
+- fonts:
+    - heading-fonts: 
+    - body-fonts: 
+
+- shadows:
+    - lg-shadow: -6px 6px 12px med-gray
+    - sm-shadow: -3px 3px 6px med-gray
+
+- skip link styles:
+    - #skip{
+        position: absolute;
+        top: auto;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    - #skip:focus{
+        position: static;
+        width: auto;
+        height: auto;
+        font-family: var(--body-fonts);
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--dk-gray);
+        outline: 4px solid var(--med-blue);
+        background-color: var(--cream);
+        outline-offset: 0;
+    }
+
+- hidden heading styles:
+    - .sr-only{
+        position: absolute;
+        top: auto;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+I am including the media query code to save you some time typing those styles out, but would still recommend listening to the videos about the CSS to understand the process. You can speed them up to save time
+
+- media query 1:
+    - @media screen and (min-width: 500px){
+        nav ul{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+        
+        nav a{
+            margin: 0;
+        }
+    }
+
+- media query 2:
+    - @media screen and (min-width: 700px){
+        nav ul{
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0 1rem;
+        }
+
+        #products h2{
+            flex-basis: 100%;
+        }
+
+        #products section{
+            flex-basis: 30%;
+        }
+
+        #testimonials{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: calc(875px - 2rem);
+            margin: 0 auto;
+        }
+
+        #testimonials h2{
+            grid-column: 1/-1;
+            text-align: left;
+        }
+
+        #testimonials section{
+            margin: 0 auto 2rem;
+        }
+    }
+
+
+- media query 3:
+    - @media screen and (min-width: 1000px){
+        header{
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 1rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        h1{
+            text-align: left;
+        }
+
+        #cta, #products, #testimonials{
+            padding: 3rem 1rem;
+        }
+
+        #cta{
+            display: grid;
+            grid-template-columns: 2fr 2.5fr;
+            grid-template-rows: auto auto auto;
+            gap: 1rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        #cta h2, #cta p, #cta a{
+            grid-column: 1/2;
+        }
+
+        #cta iframe{
+            grid-column: 2/3;
+            grid-row: 1/4;
+        }
+    }
+
+-----------------------------------------
